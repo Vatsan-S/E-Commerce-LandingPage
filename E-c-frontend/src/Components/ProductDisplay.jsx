@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
-import { fetchProductList } from "../Redux/Slice/dataSlice";
+
 
 const ProductDisplay = ({ refinedList, setIsModalOpen, setCardData }) => {
   // ---------------------------------get user Data-------------------
@@ -11,9 +11,7 @@ const ProductDisplay = ({ refinedList, setIsModalOpen, setCardData }) => {
   // const product_list = useSelector((state) => state.product_list);
   // console.log(product_list)
 
-  useEffect(() => {
-    dispatch(fetchProductList());
-  }, []);
+ 
 
   // ----------------------------handle Modal--------------------------
 

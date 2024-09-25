@@ -9,7 +9,7 @@ export const fetchProductList = createAsyncThunk(
   "data/fetchProductList",
   async () => {
     const response = await axios.get(`${API_URL}/api/product/list`);
-
+console.log("response",response)
     return response.data.list;
   }
 );

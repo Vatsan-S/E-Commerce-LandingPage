@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchProductList } from "../Redux/Slice/dataSlice";
 
 const Filter = ({ categories, setCategories, setRefinedList }) => {
   // -------------------------------states----------------------------
+  const dispatch = useDispatch()
   const [data, setData] = useState(categories);
   const [searchValue, setSearchValue] = useState("");
   const categoryList = [
@@ -32,6 +34,10 @@ const Filter = ({ categories, setCategories, setRefinedList }) => {
         )
     );
   }, [categories, searchValue, product_list]);
+
+  useEffect(() => {
+    dispatch(fetchProductList());
+  }, []);
   //    -------------------------------handle submit----------------------
   const handleSubmit = (e) => {
     e.preventDefault();
